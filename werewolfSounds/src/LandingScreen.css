@@ -3,7 +3,7 @@
 }
 
 #landing-screen {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-color: rgb(5, 5, 5);
   display: flex;
@@ -114,7 +114,7 @@
 @media (min-width: 600px) {
   #landing-screen {
     width: 430px;
-    height: 100vh;
+    height: 100dvh;
     margin: 0 auto;
     border-radius: 2%;
   }
