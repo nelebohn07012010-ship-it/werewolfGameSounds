@@ -28,7 +28,7 @@ function LandingScreen() {
 
           <div onClick={() => toggleRole("g-b-Wolf")} className={selectedRoles.includes("g-b-Wolf") ? "selected" : ""}>Großer Böser Wolf</div>
 
-          <div onClick={() => toggleRole("doppelgänger")} className={selectedRoles.includes("doppelgänger") ? "selected" : ""}>Doppelgänger</div>
+          <div onClick={() => toggleRole("doppelgänger")} className={selectedRoles.includes("doppelgänger") ? "selected" : ""}>Doppel- gänger</div>
 
           <div onClick={() => toggleRole("fuchs")} className={selectedRoles.includes("fuchs") ? "selected" : ""}>Fuchs</div>
 
