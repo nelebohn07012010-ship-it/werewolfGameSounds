@@ -10,7 +10,7 @@ For my birthday I want to play the werewolf game in a great round, but we played
 
 It's very simple! On the Landing Page you choose the roles that are in the game and then click start.
 
-![Landing Page](./screenShots/landingPage.png)
+![Landing Page](./sreenShots/landingPage.png)
 
 On the Game Screen you will then see two areas: Day and Night. You can select them and when you toggle between them you will notice the Rounds are counting. On the Day Screen you habe sounds that are used at Day: 
 
