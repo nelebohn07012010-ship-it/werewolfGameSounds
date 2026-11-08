@@ -26,7 +26,7 @@ function LandingScreen() {
 
           <div onClick={() => toggleRole("urwolf")} className={selectedRoles.includes("urwolf") ? "selected" : ""}>Urwolf</div>
 
-          <div onClick={() => toggleRole("g-b-Wolf")} className={selectedRoles.includes("g-b-Wolf") ? "selected" : ""}>Großer Böser Wolf</div>
+          <div onClick={() => toggleRole("gBWolf")} className={selectedRoles.includes("gBWolf") ? "selected" : ""}>Großer Böser Wolf</div>
 
           <div onClick={() => toggleRole("doppelgänger")} className={selectedRoles.includes("doppelgänger") ? "selected" : ""}>Doppelgänger</div>
 
@@ -38,7 +38,7 @@ function LandingScreen() {
 
           <div onClick={() => toggleRole("bärenführer")} className={selectedRoles.includes("bärenführer") ? "selected" : ""}>Bärenführer</div>
 
-          <div onClick={() => toggleRole("wilde-kind")} className={selectedRoles.includes("wilde-kind") ? "selected" : ""}>Wilde Kind</div>
+          <div onClick={() => toggleRole("wildeKind")} className={selectedRoles.includes("wildeKind") ? "selected" : ""}>Wilde Kind</div>
 
           <div onClick={() => toggleRole("wolfshund")} className={selectedRoles.includes("wolfshund") ? "selected" : ""}>Wolfshund</div>
 

@@ -11,7 +11,30 @@ const Config = {
     unschuldigerStirbt,
     werwolfStirbt
 
+  },
+
+  roles: {
+    werwolf: ["erwachen", "wählen", "gewählt"],
+    amor: ["erwachen", "verlieben", "ansehen"],
+    seherin: ["erwachen", "ansehen"],
+    hexe: ["erwachen", "heilen", "töten"],
+    jäger: ["erschießen"],
+    lästerschwestern: [],
+    urwolf: [],
+    gBWolf: [],
+    doppelgänger: [],
+    fuchs: [],
+    ritter: [],
+    rassist: [],
+    bärenführer: [],
+    wildeKind: [],
+    wolfshund: [],
+    weißerWerwolf: [],
+    flötenspieler: [],
+    engel: [],
   }
 }
+
+export type Role = keyof typeof Config.roles
 
 export default Config

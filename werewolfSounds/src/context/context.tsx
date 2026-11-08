@@ -1,11 +1,12 @@
 import { createContext, useContext, useState } from "react";
 import { useRef } from "react";
+import type { Role } from "../Config"
 
 const Context = createContext<ContextType | null>(null)
 
 type ContextType = {
-  selectedRoles: string[]
-  toggleRole: (role: string) => void
+  selectedRoles: Role[]
+  toggleRole: (role: Role) => void
   gameRunning: boolean
   setGameRunning: (state: boolean) => void
   playSound: (sound: string) => void
@@ -15,12 +16,12 @@ type ContextType = {
 
 export function Provider({ children }: { children: React.ReactNode }) {
 
-  const [selectedRoles, changeSelectedRoles] = useState<string[]>(["werwolf", "hexe", "amor", "seherin", "jäger"])
+  const [selectedRoles, changeSelectedRoles] = useState<Role[]>(["werwolf", "hexe", "amor", "seherin", "jäger"])
   const [gameRunning, setGameRunning] = useState<boolean>(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [playedSound, setPlayedSound] = useState<string>("")
 
-  function toggleRole(role: string) {
+  function toggleRole(role: Role) {
     if (selectedRoles.includes(role)) {
       changeSelectedRoles(selectedRoles.filter((item) => item !== role))
     } else {
