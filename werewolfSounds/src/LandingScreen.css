@@ -72,6 +72,8 @@
   border-radius: 5%;
   padding: 2%;
   margin: 2%;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 

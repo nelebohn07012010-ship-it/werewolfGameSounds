@@ -22,13 +22,13 @@ function LandingScreen() {
 
           <div onClick={() => toggleRole("jäger")} className={selectedRoles.includes("jäger") ? "selected" : ""}>Jäger</div>
 
-          <div onClick={() => toggleRole("lästerschwestern")} className={selectedRoles.includes("lästerschwestern") ? "selected" : ""}>Läster- schwestern</div>
+          <div onClick={() => toggleRole("lästerschwestern")} className={selectedRoles.includes("lästerschwestern") ? "selected" : ""}>Lästerschwestern</div>
 
           <div onClick={() => toggleRole("urwolf")} className={selectedRoles.includes("urwolf") ? "selected" : ""}>Urwolf</div>
 
           <div onClick={() => toggleRole("g-b-Wolf")} className={selectedRoles.includes("g-b-Wolf") ? "selected" : ""}>Großer Böser Wolf</div>
 
-          <div onClick={() => toggleRole("doppelgänger")} className={selectedRoles.includes("doppelgänger") ? "selected" : ""}>Doppel- gänger</div>
+          <div onClick={() => toggleRole("doppelgänger")} className={selectedRoles.includes("doppelgänger") ? "selected" : ""}>Doppelgänger</div>
 
           <div onClick={() => toggleRole("fuchs")} className={selectedRoles.includes("fuchs") ? "selected" : ""}>Fuchs</div>
 
