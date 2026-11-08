@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+#day-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-bottom: 6%;
+}
+
+
+#day-screen div {
+  border: 4px solid rgb(0, 0, 0);
+  background-color: rgba(212, 6, 6, 0.551);
+  width: 100%;
+  margin: 5% 0;
+  padding: 3%;
+  border-radius: 2%;
+  color: #070707fe;
+  font-size: 200%;
+  border-radius: 3%;
+}
+
+#day-screen .playing {
+  background-color: red;
+}
+
+#day-screen div:hover {
+  background-color: rgba(177, 0, 0, 0.496);
+  cursor: pointer;
+}
+
+#day-screen .playing:hover {
+  background-color: red;
+}

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 #landing-screen {
   height: 100vh;
   width: 100vw;
@@ -18,7 +22,7 @@
   box-shadow: 0 0 20px 10px rgba(163, 1, 1, 0.605);
   margin-top: 20%;
   margin-bottom: 10%;
-  padding: 5%;
+  padding-top: 5%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -48,25 +52,39 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 10%;
-  column-gap: 5%;
-  margin: 3%;
-  padding: 5%;
+  column-gap: 3%;
+  padding: 2%;
+  margin: 2%;
 
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+
 
 #roles div {
   font-size: 100%;
   border: 0.05px solid rgba(255, 255, 255, 0.674);
   border-radius: 5%;
   padding: 2%;
+  margin: 2%;
 }
 
+
 #roles div:hover {
-  background-color: rgb(172, 0, 0) !important;
+  background-color: rgba(177, 0, 0, 0.246);
   cursor: pointer;
+}
+
+#roles .selected {
+  background-color: rgba(193, 1, 1, 0.613);
+}
+
+#roles .selected:hover {
+  background-color: rgba(193, 1, 1, 0.613);
 }
 
 #start-button {
@@ -83,4 +101,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#start-button:hover {
+  background-color: rgba(203, 4, 4, 0.344);
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  #landing-screen {
+    width: 430px;
+    height: 100vh;
+    margin: 0 auto;
+    border-radius: 2%;
+  }
 }
