@@ -9,22 +9,21 @@ function NightScreen() {
 
   function displayProperties(role: Role) {
     return (
-      <div>
-        <div>{role}</div>
-
-        <div>
-          {roleProperties[role].map((property) => (
-            <div key={property}>{property}</div>
+      <details>
+        <summary>{role}</summary>
+        <div key={role}>
+          {roleProperties[role]?.map((property) => (
+            <div className="property" key={property}>{property}</div>
           ))}
         </div>
-      </div>
+      </details>
     )
 
   }
 
   return (
     <div id="night-screen">
-      {selectedRoles.map((role) => displayProperties(role))}
+      {selectedRoles?.map((role) => displayProperties(role))}
     </div>
   )
 }

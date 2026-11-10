@@ -16,7 +16,7 @@ type ContextType = {
 
 export function Provider({ children }: { children: React.ReactNode }) {
 
-  const [selectedRoles, changeSelectedRoles] = useState<Role[]>(["werwolf", "hexe", "amor", "seherin", "jäger"])
+  const [selectedRoles, changeSelectedRoles] = useState<Role[]>(["Werwolf", "Hexe", "Amor", "seherin", "Jäger"])
   const [gameRunning, setGameRunning] = useState<boolean>(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [playedSound, setPlayedSound] = useState<string>("")

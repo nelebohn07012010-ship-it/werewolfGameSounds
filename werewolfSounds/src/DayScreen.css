@@ -14,26 +14,31 @@
 
 
 #day-screen div {
-  border: 4px solid rgb(0, 0, 0);
-  background-color: rgba(212, 6, 6, 0.551);
+  border: 3px solid rgba(147, 2, 2, 0.225);
+  background-color: rgba(118, 1, 1, 0.551);
   width: 100%;
   margin: 5% 0;
   padding: 3%;
   border-radius: 2%;
-  color: #070707fe;
+  color: #bab8b8fe;
   font-size: 200%;
   border-radius: 3%;
 }
 
 #day-screen .playing {
-  background-color: red;
+  background-color: rgb(141, 1, 1);
+  color: white;
+  border: 3px solid rgb(226, 2, 2);
 }
 
 #day-screen div:hover {
   background-color: rgba(177, 0, 0, 0.496);
+  border: 3px solid rgba(201, 4, 4, 0.583);
   cursor: pointer;
 }
 
 #day-screen .playing:hover {
-  background-color: red;
+  background-color: rgb(141, 1, 1);
+  color: white;
+  border: 3px solid rgb(226, 2, 2);
 }

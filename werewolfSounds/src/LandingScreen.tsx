@@ -12,41 +12,41 @@ function LandingScreen() {
       <div id="select-area">
         <div>Welche Rollen sind dabei?</div>
         <div id="roles">
-          <div onClick={() => toggleRole("werwolf")} className={selectedRoles.includes("werwolf") ? "selected" : ""}>Werwolf</div>
+          <div onClick={() => toggleRole("Werwolf")} className={selectedRoles.includes("Werwolf") ? "selected" : ""}>Werwolf</div>
 
-          <div className={selectedRoles.includes("amor") ? "selected" : ""} onClick={() => toggleRole("amor")}>Amor</div>
+          <div className={selectedRoles.includes("Amor") ? "selected" : ""} onClick={() => toggleRole("Amor")}>Amor</div>
 
-          <div onClick={() => toggleRole("seherin")} className={selectedRoles.includes("seherin") ? "selected" : ""}>Seherin</div>
+          <div onClick={() => toggleRole("Seherin")} className={selectedRoles.includes("Seherin") ? "selected" : ""}>Seherin</div>
 
-          <div onClick={() => toggleRole("hexe")} className={selectedRoles.includes("hexe") ? "selected" : ""}>Hexe</div>
+          <div onClick={() => toggleRole("Hexe")} className={selectedRoles.includes("Hexe") ? "selected" : ""}>Hexe</div>
 
-          <div onClick={() => toggleRole("jäger")} className={selectedRoles.includes("jäger") ? "selected" : ""}>Jäger</div>
+          <div onClick={() => toggleRole("Jäger")} className={selectedRoles.includes("Jäger") ? "selected" : ""}>Jäger</div>
 
-          <div onClick={() => toggleRole("lästerschwestern")} className={selectedRoles.includes("lästerschwestern") ? "selected" : ""}>Lästerschwestern</div>
+          <div onClick={() => toggleRole("Lästerschwestern")} className={selectedRoles.includes("Lästerschwestern") ? "selected" : ""}>Lästerschwestern</div>
 
-          <div onClick={() => toggleRole("urwolf")} className={selectedRoles.includes("urwolf") ? "selected" : ""}>Urwolf</div>
+          <div onClick={() => toggleRole("Urwolf")} className={selectedRoles.includes("Urwolf") ? "selected" : ""}>Urwolf</div>
 
-          <div onClick={() => toggleRole("gBWolf")} className={selectedRoles.includes("gBWolf") ? "selected" : ""}>Großer Böser Wolf</div>
+          <div onClick={() => toggleRole("GroßerBöserWolf")} className={selectedRoles.includes("GroßerBöserWolf") ? "selected" : ""}>Großer Böser Wolf</div>
 
-          <div onClick={() => toggleRole("doppelgänger")} className={selectedRoles.includes("doppelgänger") ? "selected" : ""}>Doppelgänger</div>
+          <div onClick={() => toggleRole("Doppelgänger")} className={selectedRoles.includes("Doppelgänger") ? "selected" : ""}>Doppelgänger</div>
 
-          <div onClick={() => toggleRole("fuchs")} className={selectedRoles.includes("fuchs") ? "selected" : ""}>Fuchs</div>
+          <div onClick={() => toggleRole("Fuchs")} className={selectedRoles.includes("Fuchs") ? "selected" : ""}>Fuchs</div>
 
-          <div onClick={() => toggleRole("ritter")} className={selectedRoles.includes("ritter") ? "selected" : ""}>Ritter Rost</div>
+          <div onClick={() => toggleRole("RitterRost")} className={selectedRoles.includes("RitterRost") ? "selected" : ""}>Ritter Rost</div>
 
-          <div onClick={() => toggleRole("rassist")} className={selectedRoles.includes("rassist") ? "selected" : ""}>Rassist</div>
+          <div onClick={() => toggleRole("Rassist")} className={selectedRoles.includes("Rassist") ? "selected" : ""}>Rassist</div>
 
-          <div onClick={() => toggleRole("bärenführer")} className={selectedRoles.includes("bärenführer") ? "selected" : ""}>Bärenführer</div>
+          <div onClick={() => toggleRole("Bärenführer")} className={selectedRoles.includes("Bärenführer") ? "selected" : ""}>Bärenführer</div>
 
-          <div onClick={() => toggleRole("wildeKind")} className={selectedRoles.includes("wildeKind") ? "selected" : ""}>Wilde Kind</div>
+          <div onClick={() => toggleRole("WildeKind")} className={selectedRoles.includes("WildeKind") ? "selected" : ""}>Wilde Kind</div>
 
-          <div onClick={() => toggleRole("wolfshund")} className={selectedRoles.includes("wolfshund") ? "selected" : ""}>Wolfshund</div>
+          <div onClick={() => toggleRole("Wolfshund")} className={selectedRoles.includes("Wolfshund") ? "selected" : ""}>Wolfshund</div>
 
-          <div onClick={() => toggleRole("weißerWerwolf")} className={selectedRoles.includes("weißerWerwolf") ? "selected" : ""}>Weiße Werwolf</div>
+          <div onClick={() => toggleRole("WeißerWerwolf")} className={selectedRoles.includes("WeißerWerwolf") ? "selected" : ""}>Weiße Werwolf</div>
 
-          <div onClick={() => toggleRole("flötenspieler")} className={selectedRoles.includes("flötenspieler") ? "selected" : ""}>Flötenspieler</div>
+          <div onClick={() => toggleRole("Flötenspieler")} className={selectedRoles.includes("Flötenspieler") ? "selected" : ""}>Flötenspieler</div>
 
-          <div onClick={() => toggleRole("engel")} className={selectedRoles.includes("engel") ? "selected" : ""}>Engel</div>
+          <div onClick={() => toggleRole("Engel")} className={selectedRoles.includes("Engel") ? "selected" : ""}>Engel</div>
         </div>
       </div>
       <div id="start-button" onClick={() => setGameRunning(true)}>
