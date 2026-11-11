@@ -8,11 +8,14 @@ function NightScreen() {
   const { selectedRoles } = useGame()
 
   function displayProperties(role: Role) {
+
+    const filteredRoles = roleProperties[role]?.filter((role) => role.includes("erwacht"))
+
     return (
       <details>
         <summary>{role}</summary>
         <div key={role}>
-          {roleProperties[role]?.map((property) => (
+          {filteredRoles.map((property) => (
             <div className="property" key={property}>{property}</div>
           ))}
         </div>
