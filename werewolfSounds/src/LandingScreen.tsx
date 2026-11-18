@@ -1,18 +1,30 @@
 import "./LandingScreen.css"
 import { useGame } from "./context/context"
 
+
 function LandingScreen() {
 
-  const { selectedRoles, toggleRole, setGameRunning } = useGame()
+  const { selectedRoles, toggleRole, setGameRunning, selectFile, showInput, setShowInput } = useGame()
+
 
 
   return (
     <div id="landing-screen">
       <div id="heading">WEREWOLF SOUNDS</div>
+      {showInput && (
+        <div>
+          <input id="audio-select" type="file" accept="audio/*" />
+          <label htmlFor="audio-select">
+            <div id="select-field">Keine Datei ausgewählt</div>
+            <div>Audio Datei wählen...</div>
+            <div onClick={() => setShowInput(false)}>Bestätigen</div>
+          </label>
+        </div>
+      )}
       <div id="select-area">
         <div>Welche Rollen sind dabei?</div>
         <div id="roles">
-          <div onClick={() => toggleRole("Werwolf")} className={selectedRoles.includes("Werwolf") ? "selected" : ""}>Werwolf</div>
+          <div onPointerDown={() => selectFile()} onPointerUp={() => toggleRole("Werwolf")} className={selectedRoles.includes("Werwolf") ? "selected" : ""}>Werwolf</div>
 
           <div className={selectedRoles.includes("Amor") ? "selected" : ""} onClick={() => toggleRole("Amor")}>Amor</div>
 
