@@ -260,7 +260,9 @@ input {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 200%;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 150%;
   border: 1px solid rgba(178, 177, 176, 0.419);
   border-radius: 40%;
   color: rgba(183, 182, 182, 0.65);
