@@ -212,6 +212,25 @@ input {
   width: 0%;
 }
 
+.close {
+  position: absolute;
+  top: 0.5%;
+  right: 1%;
+  font-size: 200%;
+  border: 1px solid rgba(178, 177, 176, 0.419);
+  border-radius: 40%;
+  padding: 0 2%;
+  color: rgba(183, 182, 182, 0.65);
+  z-index: 10;
+}
+
+.close:hover {
+  border: 1px solid rgba(168, 167, 166, 0.879);
+  color: rgba(226, 224, 224, 0.87);
+  background-color: rgb(73, 73, 73);
+  cursor: pointer;
+}
+
 
 
 @media (min-width: 600px) {

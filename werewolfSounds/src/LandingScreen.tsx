@@ -6,7 +6,7 @@ import Config from "./Config"
 
 function LandingScreen() {
 
-  const { selectedRoles, toggleRole, setGameRunning, holdButton, showInput, selectFile, showFileSelection, selectedFile, submitFile, showPropertySelection, activeButton } = useGame()
+  const { selectedRoles, toggleRole, setGameRunning, holdButton, showInput, selectFile, showFileSelection, selectedFile, submitFile, showPropertySelection, activeButton, close } = useGame()
 
 
 
@@ -15,6 +15,7 @@ function LandingScreen() {
       <div id="heading">WEREWOLF SOUNDS</div>
       {showPropertySelection && (
         <div id="property-selection">
+          <div className="close" onClick={close}>x</div>
           <div id="top">Aktion wählen</div>
           {activeButton.current ? Config.roles[activeButton.current].map((property) => <div className="property-select" onClick={() => showFileSelection(`${activeButton.current?.toLocaleLowerCase()}-${property.replace(/\s+/g, "-").toLocaleLowerCase()}`)}>{property}</div>) : "Keine Rolle ausgewählt"}
         </div>
@@ -23,6 +24,7 @@ function LandingScreen() {
         <div>
           <input id="audio-select" type="file" accept="audio/*" onChange={selectFile} />
           <label htmlFor="audio-select">
+            <div className="close" onClick={close}>x</div>
             <div id="select-field" className={selectedFile ? "selected" : ""}>{selectedFile?.name || "Keine Datei ausgewählt"}</div>
             <div>Audio Datei wählen...</div>
             <div onClick={() => submitFile()}>Bestätigen</div>

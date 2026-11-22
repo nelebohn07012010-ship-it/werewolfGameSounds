@@ -24,6 +24,7 @@ type ContextType = {
   showPropertySelection: boolean
   activeButton: React.RefObject<Role>
   showFileSelection: (name: string) => void
+  close: () => void
 }
 
 export function Provider({ children }: { children: React.ReactNode }) {
@@ -83,6 +84,14 @@ export function Provider({ children }: { children: React.ReactNode }) {
     setShowInput(false)
   }
 
+  function close() {
+    setSelectedFile(null)
+    activeButton.current = undefined
+    fileName.current = null
+    setShowInput(false)
+    setShowPropertySelection(false)
+  }
+
 
   async function playSound(sound: string) {
 
@@ -115,7 +124,7 @@ export function Provider({ children }: { children: React.ReactNode }) {
     });
   }
 
-  return (<Context.Provider value={{ selectedRoles, toggleRole, gameRunning, setGameRunning, playSound, audioRef, playedSound, holdButton, showInput, setShowInput, selectFile, selectedFile, submitFile, showPropertySelection, activeButton, showFileSelection }}>{children}</Context.Provider>)
+  return (<Context.Provider value={{ selectedRoles, toggleRole, gameRunning, setGameRunning, playSound, audioRef, playedSound, holdButton, showInput, setShowInput, selectFile, selectedFile, submitFile, showPropertySelection, activeButton, showFileSelection, close }}>{children}</Context.Provider>)
 
 }
 
