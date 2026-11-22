@@ -171,7 +171,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .black {
@@ -281,6 +281,11 @@ input {
   color: rgb(157, 1, 1);
 }
 
+#ending:hover {
+  color: rgb(53, 1, 1);
+  cursor: pointer;
+}
+
 .loading-dots {
   display: flex;
   gap: 5px;
@@ -333,6 +338,10 @@ input {
   }
 
   #property-selection {
+    width: 400px;
+  }
+
+  #recording {
     width: 400px;
   }
 }

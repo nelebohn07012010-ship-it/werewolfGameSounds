@@ -8,9 +8,13 @@ For my birthday I want to play the werewolf game in a great round, but we played
 
 # How does it work?
 
-It's very simple! On the Landing Page you choose the roles that are in the game and then click start.
+It's very simple! On the Landing Page you choose the roles that are in the game and then click start. 
 
 ![Landing Page](./sreenShots/landingPage.png)
+
+In this version you can also upload your sounds for the different roles. Therefore you press the buttons for a longer time (not just clicking - clicking is still for selection). Then you will see that menu, were you can select the action for which you want to upload a sound:
+
+
 
 On the Game Screen you will then see two areas: Day and Night. You can select them and when you toggle between them you will notice the Rounds are counting. On the Day Screen you habe sounds that are used at Day: 
 
