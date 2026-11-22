@@ -1,4 +1,5 @@
 import { supabase } from "../lib/supabase";
+import { FunctionsHttpError } from "@supabase/supabase-js";
 
 export async function uploadAudioFile(
   buttonName: string,
@@ -18,6 +19,13 @@ export async function uploadAudioFile(
   );
 
   if (error) {
+    console.log("Upload-Fehler:", error);
+
+    if (error instanceof FunctionsHttpError) {
+      const errorDetails = await error.context.json();
+      console.log("Server-Fehler:", errorDetails);
+    }
+
     throw error;
   }
 

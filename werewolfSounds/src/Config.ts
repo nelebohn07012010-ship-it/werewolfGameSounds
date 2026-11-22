@@ -35,6 +35,6 @@ const Config = {
   }
 }
 
-export type Role = keyof typeof Config.roles
+export type Role = keyof typeof Config.roles | undefined
 
 export default Config

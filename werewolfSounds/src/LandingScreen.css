@@ -119,15 +119,58 @@ label {
   z-index: 100;
   height: 40%;
   width: 80%;
-  background-color: #484848c3;
+  background-color: #2c2c2ce4;
   border: 2px solid black;
-  border-radius: 10%;
+  border-radius: 5%;
   padding-top: 5%;
   padding-bottom: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#property-selection {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  height: 40%;
+  width: 80%;
+  background-color: #2c2c2ce4;
+  border: 2px solid black;
+  border-radius: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.property-select {
+  width: 80%;
+  font-size: 200%;
+  border: 0.05px solid rgba(255, 255, 255, 0.674);
+  background-color: rgba(74, 0, 0, 0.898);
+  border-radius: 5%;
+  padding: 2%;
+  margin: 2%;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.property-select:hover {
+  background-color: rgb(150, 2, 2);
+}
+
+#top {
+  font-size: 200%;
+  color: rgb(196, 4, 4);
+  border-bottom: 2px solid black;
+  padding: 5%;
+  font-weight: 200%;
 }
 
 label div {
@@ -148,12 +191,22 @@ label div {
   color: rgb(165, 165, 165);
 }
 
+
+#select-field.selected {
+  color: black;
+  font-size: 200%;
+  padding: 7.5% 10%;
+}
+
 label div:hover {
   cursor: pointer;
+  background-color: rgb(17, 17, 17);
 }
 
 input {
   opacity: 0;
+  height: 0%;
+  width: 0%;
 }
 
 

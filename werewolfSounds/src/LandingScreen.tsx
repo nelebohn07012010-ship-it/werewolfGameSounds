@@ -1,30 +1,38 @@
 import "./LandingScreen.css"
 import { useGame } from "./context/context"
+import Config from "./Config"
+
 
 
 function LandingScreen() {
 
-  const { selectedRoles, toggleRole, setGameRunning, selectFile, showInput, setShowInput } = useGame()
+  const { selectedRoles, toggleRole, setGameRunning, holdButton, showInput, selectFile, showFileSelection, selectedFile, submitFile, showPropertySelection, activeButton } = useGame()
 
 
 
   return (
     <div id="landing-screen">
       <div id="heading">WEREWOLF SOUNDS</div>
+      {showPropertySelection && (
+        <div id="property-selection">
+          <div id="top">Aktion wählen</div>
+          {activeButton.current ? Config.roles[activeButton.current].map((property) => <div className="property-select" onClick={() => showFileSelection(`${activeButton.current?.toLocaleLowerCase()}-${property.replace(/\s+/g, "-").toLocaleLowerCase()}`)}>{property}</div>) : "Keine Rolle ausgewählt"}
+        </div>
+      )}
       {showInput && (
         <div>
-          <input id="audio-select" type="file" accept="audio/*" />
+          <input id="audio-select" type="file" accept="audio/*" onChange={selectFile} />
           <label htmlFor="audio-select">
-            <div id="select-field">Keine Datei ausgewählt</div>
+            <div id="select-field" className={selectedFile ? "selected" : ""}>{selectedFile?.name || "Keine Datei ausgewählt"}</div>
             <div>Audio Datei wählen...</div>
-            <div onClick={() => setShowInput(false)}>Bestätigen</div>
+            <div onClick={() => submitFile()}>Bestätigen</div>
           </label>
         </div>
       )}
       <div id="select-area">
         <div>Welche Rollen sind dabei?</div>
         <div id="roles">
-          <div onPointerDown={() => selectFile()} onPointerUp={() => toggleRole("Werwolf")} className={selectedRoles.includes("Werwolf") ? "selected" : ""}>Werwolf</div>
+          <div onPointerDown={() => holdButton("Werwolf")} onPointerUp={() => toggleRole("Werwolf")} className={selectedRoles.includes("Werwolf") ? "selected" : ""}>Werwolf</div>
 
           <div className={selectedRoles.includes("Amor") ? "selected" : ""} onClick={() => toggleRole("Amor")}>Amor</div>
 

@@ -5,9 +5,12 @@ import Config, { type Role } from "./Config"
 
 function NightScreen() {
   const roleProperties = Config.roles
-  const { selectedRoles } = useGame()
+  const { selectedRoles, playSound } = useGame()
 
   function displayProperties(role: Role) {
+    if (!role) {
+      return
+    }
     const properties = roleProperties[role]
 
     return (
@@ -15,7 +18,7 @@ function NightScreen() {
         <summary>{role}</summary>
         <div key={role}>
           {properties?.map((property) => (
-            <div className="property" key={property}>{property}</div>
+            <div className="property" onClick={() => playSound(`${role.toLocaleLowerCase()}-${property.replace(/\s+/g, "-").toLocaleLowerCase()}`)} key={property}>{property}</div>
           ))}
         </div>
       </details>
@@ -26,7 +29,8 @@ function NightScreen() {
   return (
     <div id="night-screen">
       {selectedRoles
-        ?.filter((role) =>
+        ?.filter((role): role is Role =>
+          role !== undefined &&
           roleProperties[role]?.includes("erwacht")
         )
         .map((role) => displayProperties(role))}

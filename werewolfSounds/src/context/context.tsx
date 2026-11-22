@@ -2,6 +2,8 @@ import { createContext, useContext, useState } from "react";
 import { useRef } from "react";
 import type { Role } from "../Config"
 import { getAudioFile } from "../lib/audioService";
+import { uploadAudioFile } from "../lib/audioService";
+
 
 const Context = createContext<ContextType | null>(null)
 
@@ -13,9 +15,15 @@ type ContextType = {
   playSound: (sound: string) => Promise<void>
   audioRef: React.RefObject<HTMLAudioElement | null>
   playedSound: string
-  selectFile: () => void
+  holdButton: (button: Role) => void
   showInput: boolean
   setShowInput: (state: boolean) => void
+  selectFile: (e: React.ChangeEvent<HTMLInputElement>) => void
+  selectedFile: File | null
+  submitFile: () => void
+  showPropertySelection: boolean
+  activeButton: React.RefObject<Role>
+  showFileSelection: (name: string) => void
 }
 
 export function Provider({ children }: { children: React.ReactNode }) {
@@ -27,6 +35,10 @@ export function Provider({ children }: { children: React.ReactNode }) {
   const currentURL = useRef<string | null>(null)
   const timer = useRef<number | undefined>(undefined)
   const [showInput, setShowInput] = useState<boolean>(false)
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const activeButton = useRef<Role>(undefined)
+  const fileName = useRef<string | null>(null)
+  const [showPropertySelection, setShowPropertySelection] = useState<boolean>(false)
 
   function toggleRole(role: Role) {
     clearTimeout(timer.current)
@@ -37,12 +49,40 @@ export function Provider({ children }: { children: React.ReactNode }) {
     }
   }
 
-  function selectFile() {
-    timer.current = setTimeout(() => {
-      setShowInput(true)
-    }, 800);
-
+  function showFileSelection(name: string) {
+    setShowInput(true)
+    setShowPropertySelection(false)
+    const cleanName = name.replace(/ä/g, "ae")
+      .replace(/ö/g, "oe")
+      .replace(/ü/g, "ue")
+      .replace(/ß/g, "ss");
+    fileName.current = cleanName
+    console.log(fileName.current)
   }
+
+  function holdButton(button: Role) {
+    timer.current = setTimeout(() => {
+      setShowPropertySelection(true)
+      activeButton.current = button
+    }, 800);
+  }
+
+  function selectFile(e: React.ChangeEvent<HTMLInputElement>) {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedFile(e.target.files[0]);
+    }
+  }
+
+  function submitFile() {
+    if (selectedFile && fileName.current) {
+      uploadAudioFile(fileName.current, selectedFile)
+    }
+    activeButton.current = undefined
+    fileName.current = null
+    setSelectedFile(null)
+    setShowInput(false)
+  }
+
 
   async function playSound(sound: string) {
 
@@ -54,7 +94,12 @@ export function Provider({ children }: { children: React.ReactNode }) {
       }
     }
 
-    const audio = await getAudioFile(sound);
+    const cleanSound = sound.replace(/ä/g, "ae")
+      .replace(/ö/g, "oe")
+      .replace(/ü/g, "ue")
+      .replace(/ß/g, "ss");
+
+    const audio = await getAudioFile(cleanSound);
     currentURL.current = URL.createObjectURL(audio)
 
     audioRef.current = new Audio(currentURL.current);
@@ -70,7 +115,7 @@ export function Provider({ children }: { children: React.ReactNode }) {
     });
   }
 
-  return (<Context.Provider value={{ selectedRoles, toggleRole, gameRunning, setGameRunning, playSound, audioRef, playedSound, selectFile, showInput, setShowInput }}>{children}</Context.Provider>)
+  return (<Context.Provider value={{ selectedRoles, toggleRole, gameRunning, setGameRunning, playSound, audioRef, playedSound, holdButton, showInput, setShowInput, selectFile, selectedFile, submitFile, showPropertySelection, activeButton, showFileSelection }}>{children}</Context.Provider>)
 
 }
 
