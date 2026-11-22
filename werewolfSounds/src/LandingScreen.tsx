@@ -4,9 +4,10 @@ import Config from "./Config"
 
 
 
+
 function LandingScreen() {
 
-  const { selectedRoles, toggleRole, setGameRunning, holdButton, showInput, selectFile, showFileSelection, selectedFile, submitFile, showPropertySelection, activeButton, close } = useGame()
+  const { isPlaying, playSelectedFile, endRecording, selectedRoles, toggleRole, setGameRunning, holdButton, showInput, selectFile, showFileSelection, selectedFile, submitFile, showPropertySelection, activeButton, close, recording, isRecording } = useGame()
 
 
 
@@ -23,14 +24,28 @@ function LandingScreen() {
       {showInput && (
         <div>
           <input id="audio-select" type="file" accept="audio/*" onChange={selectFile} />
-          <label htmlFor="audio-select">
-            <div className="close" onClick={close}>x</div>
-            <div id="select-field" className={selectedFile ? "selected" : ""}>{selectedFile?.name || "Keine Datei ausgewählt"}</div>
-            <div>Audio Datei wählen...</div>
-            <div onClick={() => submitFile()}>Bestätigen</div>
-          </label>
+          <div className="label">
+            <label htmlFor="audio-select">
+              <div className="close" onClick={close}>x</div>
+              <div id="select-field" onClick={playSelectedFile} className={`${selectedFile ? "selected" : ""} ${isPlaying ? "playing" : ""}`}>{selectedFile?.name || "Keine Datei ausgewählt"}</div>
+              <div>Audio Datei wählen...</div>
+            </label>
+            <div onClick={recording}>Audio Datei aufnehmen...</div>
+            <div onClick={submitFile}>Bestätigen</div>
+          </div>
         </div>
       )}
+      {isRecording && (<div id="recording">
+        <div className="black">Recorder</div>
+        <div id="ct">
+          <div className="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="ending" onClick={endRecording}> ⏹</div>
+        </div>
+      </div>)}
       <div id="select-area">
         <div>Welche Rollen sind dabei?</div>
         <div id="roles">

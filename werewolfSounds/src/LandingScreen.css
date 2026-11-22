@@ -113,7 +113,7 @@
   cursor: pointer;
 }
 
-label {
+.label {
   position: absolute;
   top: 70%;
   left: 50%;
@@ -130,6 +130,10 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+label {
+  width: 85%;
 }
 
 #property-selection {
@@ -149,6 +153,29 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#recording {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  height: 15%;
+  width: 90%;
+  background-color: #908f8fe4;
+  border: 2px solid black;
+  border-radius: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.black {
+  color: black;
 }
 
 .property-select {
@@ -176,13 +203,28 @@ label {
   font-weight: 200%;
 }
 
-label div {
+.label div {
   background-color: rgba(36, 35, 35, 0.814);
   border: 1px solid rgba(198, 198, 198, 0.718);
   color: rgba(255, 255, 255, 0.679);
   padding: 3%;
   text-align: center;
   margin: 2%;
+}
+
+#recording div {
+  font-size: 200%;
+}
+
+#recording div div {
+  font-size: 150%;
+}
+
+#ct {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 #select-field {
@@ -201,7 +243,11 @@ label div {
   padding: 7.5% 10%;
 }
 
-label div:hover {
+#select-field.playing {
+  background-color: white;
+}
+
+.label div:hover {
   cursor: pointer;
   background-color: rgb(17, 17, 17);
 }
@@ -219,9 +265,9 @@ input {
   font-size: 200%;
   border: 1px solid rgba(178, 177, 176, 0.419);
   border-radius: 40%;
-  padding: 0 2%;
   color: rgba(183, 182, 182, 0.65);
   z-index: 10;
+  padding: 0;
 }
 
 .close:hover {
@@ -229,6 +275,47 @@ input {
   color: rgba(226, 224, 224, 0.87);
   background-color: rgb(73, 73, 73);
   cursor: pointer;
+}
+
+#ending {
+  color: rgb(157, 1, 1);
+}
+
+.loading-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.loading-dots span {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0.5);
+    opacity: 0.4;
+  }
+
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
 
 
@@ -241,7 +328,7 @@ input {
     border-radius: 2%;
   }
 
-  label {
+  .label {
     width: 400px;
   }
 

@@ -46,3 +46,43 @@ export async function getAudioFile(buttonName: string) {
 
   return data;
 }
+
+export async function startRecording(chunksRef: React.RefObject<BlobPart[]>, recorderRef: React.RefObject<MediaRecorder | null>) {
+  const stream = await navigator.mediaDevices.getUserMedia({
+    audio: true
+  });
+
+  const recorder = new MediaRecorder(stream);
+  recorderRef.current = recorder
+
+  recorder.ondataavailable = (event) => {
+    if (event.data.size > 0) {
+      chunksRef.current?.push(event.data);
+    }
+  };
+
+  recorder.start();
+}
+
+export function stopRecording(chunksRef: React.RefObject<BlobPart[]>, recorderRef: React.RefObject<MediaRecorder | null>) {
+  const recorder = recorderRef.current
+  if (!recorder) {
+    return
+  }
+  return new Promise<File>((resolve) => {
+    recorder.onstop = () => {
+      const audioBlob = new Blob(chunksRef.current, {
+        type: recorder.mimeType
+      });
+
+      const audioFile = new File(
+        [audioBlob],
+        "aufnahme.webm",
+        { type: audioBlob.type }
+      );
+      resolve(audioFile);
+    };
+    recorder.stop()
+  });
+
+}
