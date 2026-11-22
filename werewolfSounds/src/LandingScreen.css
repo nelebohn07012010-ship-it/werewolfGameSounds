@@ -165,6 +165,7 @@ label {
 
 .property-select:hover {
   background-color: rgb(150, 2, 2);
+  cursor: pointer;
 }
 
 #top {
@@ -222,6 +223,10 @@ input {
   }
 
   label {
+    width: 400px;
+  }
+
+  #property-selection {
     width: 400px;
   }
 }
