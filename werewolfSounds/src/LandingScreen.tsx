@@ -25,9 +25,9 @@ function LandingScreen() {
         <div>
           <input id="audio-select" type="file" accept="audio/*" onChange={selectFile} />
           <div className="label">
+            <div className="close" onClick={close}>x</div>
+            <div id="select-field" onClick={playSelectedFile} className={`${selectedFile ? "selected" : ""} ${isPlaying ? "playing" : ""}`}>{selectedFile?.name || "Keine Datei ausgewählt"}</div>
             <label htmlFor="audio-select">
-              <div className="close" onClick={close}>x</div>
-              <div id="select-field" onClick={playSelectedFile} className={`${selectedFile ? "selected" : ""} ${isPlaying ? "playing" : ""}`}>{selectedFile?.name || "Keine Datei ausgewählt"}</div>
               <div>Audio Datei wählen...</div>
             </label>
             <div onClick={recording}>Audio Datei aufnehmen...</div>

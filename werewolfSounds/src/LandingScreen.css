@@ -205,9 +205,9 @@ label {
   background-color: rgba(36, 35, 35, 0.814);
   border: 1px solid rgba(198, 198, 198, 0.718);
   color: rgba(255, 255, 255, 0.679);
-  padding: 3%;
   text-align: center;
-  margin: 2%;
+  padding: 2%;
+  margin: 1%;
 }
 
 #recording div {
