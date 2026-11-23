@@ -76,7 +76,7 @@ export function Provider({ children }: { children: React.ReactNode }) {
     timer.current = setTimeout(() => {
       setShowPropertySelection(true)
       activeButton.current = button
-    }, 800);
+    }, 1600);
   }
 
   function selectFile(e: React.ChangeEvent<HTMLInputElement>) {
